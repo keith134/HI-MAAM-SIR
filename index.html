@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Message for Teachers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            background: #f0f0f3;
+            box-shadow: 9px 9px 16px #d9d9d9, -9px -9px 16px #ffffff;
+            border-radius: 20px;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: transform 0.5s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .button {
+            background: #f0f0f3;
+            box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .button:hover {
+            background: #e3e3e6;
+            box-shadow: inset 3px 3px 6px #d9d9d9, inset -3px -3px 6px #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .paper {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: all 0.5s ease-in-out;
+            z-index: 10;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.open .paper {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .message {
+            font-size: 14px;
+            color: #333;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .message {
+            animation: slideIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <img class="logo" src="_ef8fec52-c30c-45e1-923c-587ada7883c9.jpg" alt="Logo">
+        <button class="button" onclick="openCard()">Basaha Ma'am/Sir</button>
+        <div class="paper">
+            <div class="message">
+                Hi Ma'am/Sir! Merry Christmas sa inyong tanan! 🎄✨<br><br>
+                Una sa tanan, thank you kaayo, Ma'am/Sir, sa inyong patience sa amo. Grabe ka challenging ang year, pero kamo, wala gyud mo nawala sa inyong dedication to guide and support us, bisan naa mi’y times nga murag gahig ulo or pasaway kaayo. Pero kamo? Steady lang, murag rock.<br><br>
+                Honestly, ma’am/sir, kung walay teachers like you, unsaon kaha namo pag-navigate ani nga journey? Dili gyud lalim ang inyong role, pero you always make sure nga makasabot mi, nga ma-feel namo nga naa mo diri para sa amo. Solid kaayo mo!<br><br>
+                Daghan kaayong salamat, Ma'am/Sir. Merry Christmas, and know nga bisan unsa pa among kapilyuhan, love gyud kaayo namo kamo tanan. From ICT Acacia, Merry Christmas and God bless! 🎄❤️<br><br>
+                P.S. Sir/Ma’am, magpaburger mo ha—joke lang! Pero kung naa, mas okay! 😄
+            </div>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="Pasko Sa ICT(1).mp3"></audio>
+
+    <script>
+        function openCard() {
+            const card = document.getElementById('card');
+            const music = document.getElementById('backgroundMusic');
+            card.classList.add('open');
+            music.play();
+        }
+    </script>
+</body>
+</html>
